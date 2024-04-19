@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>研 0 第一场进组面试复盘总结（nlp 组） | HoYiShui's Blog</title><meta name="author" content="HoYiShui,hezehong1013@163.com"><meta name="copyright" content="HoYiShui"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="研 0 进组面试总结 手机上的 Days Matter 提醒我，今天已经是复试结束后的第 19 天了，网安院何其多人，找个合适的老师还是任重道远啊  面试前其实这是第三位老师，前面已经给两位老师发了邮件： 第一位郝老师，官网 profile 上写的研究方向是信息论、纠错编码、密码学、机器学习，还强调了“主要研究兴趣”为：全同态加密，隐私保护机器学习，存储纠删码，全密态数据库，看这些内容也是偏研究的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="研 0 第一场进组面试复盘总结（nlp 组）">
+<meta property="og:url" content="http://example.com/2024/04/19/summary-of-interview-for-admission-to-group/index.html">
+<meta property="og:site_name" content="HoYiShui&#39;s Blog">
+<meta property="og:description" content="研 0 进组面试总结 手机上的 Days Matter 提醒我，今天已经是复试结束后的第 19 天了，网安院何其多人，找个合适的老师还是任重道远啊  面试前其实这是第三位老师，前面已经给两位老师发了邮件： 第一位郝老师，官网 profile 上写的研究方向是信息论、纠错编码、密码学、机器学习，还强调了“主要研究兴趣”为：全同态加密，隐私保护机器学习，存储纠删码，全密态数据库，看这些内容也是偏研究的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ooo.0x0.ooo/2024/04/19/Op5vUU.jpg">
+<meta property="article:published_time" content="2024-04-19T07:03:46.000Z">
+<meta property="article:modified_time" content="2024-04-19T09:03:44.809Z">
+<meta property="article:author" content="HoYiShui">
+<meta property="article:tag" content="nlp">
+<meta property="article:tag" content="Kmeans">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="ML">
+<meta property="article:tag" content="Reinforement Learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ooo.0x0.ooo/2024/04/19/Op5vUU.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/04/19/summary-of-interview-for-admission-to-group/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '研 0 第一场进组面试复盘总结（nlp 组）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-19 17:03:44'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/profile/bear.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://ooo.0x0.ooo/2024/04/19/Op5vUU.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="HoYiShui's Blog"><span class="site-name">HoYiShui's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">研 0 第一场进组面试复盘总结（nlp 组）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-04-19T07:03:46.000Z" title="Created 2024-04-19 15:03:46">2024-04-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-04-19T09:03:44.809Z" title="Updated 2024-04-19 17:03:44">2024-04-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/interview-summary/">interview summary</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="研 0 第一场进组面试复盘总结（nlp 组）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="研-0-进组面试总结"><a href="#研-0-进组面试总结" class="headerlink" title="研 0 进组面试总结"></a>研 0 进组面试总结</h1><blockquote>
+<p>手机上的 Days Matter 提醒我，今天已经是复试结束后的第 19 天了，网安院何其多人，找个合适的老师还是任重道远啊</p>
+</blockquote>
+<h2 id="面试前"><a href="#面试前" class="headerlink" title="面试前"></a>面试前</h2><p>其实这是第三位老师，前面已经给两位老师发了邮件：</p>
+<p>第一位郝老师，官网 profile 上写的研究方向是信息论、纠错编码、密码学、机器学习，还强调了“主要研究兴趣”为：全同态加密，隐私保护机器学习，存储纠删码，全密态数据库，看这些内容也是偏研究的（密码学当然是搞研究的），当初给他发邮件是因为有本校同学说这老师人还挺好的，但是这些研究方向确实很“网络安全”，对于我这种半路出家的上手难度有点高，也许真的不太适合，因为关于网络安全的内容，我就复试前对北邮自己出的那本教材学了大半本的密码学，更杂的网络安全是看都不想看一点。</p>
+<blockquote>
+<p>密码学热潮已过了，虽然确实很有用，并且最近入坑的人也很多（os：美密会今年又投了一堆，哪来的这么多人…），但是始终不是最有前途的方向</p>
+</blockquote>
+<p>第二位时老师，主要还是因为本校学生评价人不错就申请了，官网 profile 写的研究方向是网络测量、匿名通信与隐私保护、区块链安全、信息智能处理与大数据安全分析、网络模拟仿真，感觉应该是做项目相关的，应该不错，因为我有一个 TCP 协议的项目（虽然真要严格区分的话这项目应该算入系统编程），对这些东西也挺感兴趣，起码不是密码学那种不自量力型，或者是攻防那种完全不想做的方面。</p>
+<blockquote>
+<p>做项目的话，我也不太了解，但是起码你的 coding 能力不会退化吧，一下考了两年研，我码力确实弱了不少</p>
+</blockquote>
+<p>虽然我现在回过头来看我的头两封套磁邮件写的确实很粗糙，甚至可以看作没有太大诚意，但是即使如此，两位老师也没有回复我的邮件，可能是招生名额已经用完了，也可能是觉得我太菜了。</p>
+<blockquote>
+<p>高情商：和课题组不匹配；低情商：菜</p>
+</blockquote>
+<p>第三位尚老师，研究的是 nlp 和内容安全，大致交流过并且看他的论文应该是做 nlp 的语义安全的，方向不错，甚至是目前我最想做的方向了，虽然 nlp 领域的端对端难题目前来看是被 LLM 解决了，早些年 nlp 端对端表现比 cv 差太多了，只能拆分成上下游的各个子任务各自研究，其实这位老师也多半感知到了这些问题，虽然他目前引用最高的一篇 AAAI 是搞上游任务的 JERE 的，但后续研究重心应该是语义安全</p>
+<blockquote>
+<p>关于研究重心目前还在犹豫，虽然毫无疑问应该 all in AI，但是对 system 的东西还没有怯魅，还不想那么快切换</p>
+</blockquote>
+<p>我记得是上周二这位老师就亲自打了电话过来，说这周五 &#x2F; 周末或者再下周一安排一次面试，其实从细节来看这位老师人确实还是不错的，对这次 meeting 他称之为“交流”，而不是“面试”，虽然后来我一直坚持当作“面试”，因为本质如此。</p>
+<p>准备倒是好好准备了，我翻了一下这老师的论文，关键的几篇看了一下摘要引言结论这样，并且去 Kaggle 找了个文本分类的 nlp 赛题做了一下，稍微熟悉一下 nlp 各种任务和流程，但是准备方向有点歪了，具体看下面的面试过程吧</p>
+<h2 id="面试过程"><a href="#面试过程" class="headerlink" title="面试过程"></a>面试过程</h2><h3 id="手写-Kmeans-算法"><a href="#手写-Kmeans-算法" class="headerlink" title="手写 Kmeans 算法"></a>手写 Kmeans 算法</h3><p>面试时间大约是一小时，体感真的是没问什么问题就过去了。<br>第一项内容是实现一个 Kmeans 算法，很凑巧我没有系统的学过传统 ML（其实是有在计划中的，我打算选完导师后用李航那本统计学习方法补一补传统的 ML 基础，不过计划赶不上变化 X-D），并且现在是半个 python 残疾人（一是它就不是我的主力开发语言，二是考研两年就算有基础也忘得差不多了）<br>其实老师直接指示出大致要做什么东西了：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Kmeans:</span></span><br><span class="line"><span class="comment"># 1. 随机生成若干个样本点</span></span><br><span class="line"><span class="comment"># 2. 用 Kmeas 算法对样本点进行聚类</span></span><br><span class="line"><span class="comment"># 3. 输出聚类结果</span></span><br></pre></td></tr></table></figure>
+<p>其实是很简单的 20 代码内就可以完成，奈何我是完全不了解这些经典的 ML 算法，只是听过这一个概念，所以现场打开 ChatGPT &amp;&amp; Gemini，在腾讯会议七个人的注视下开始学习 Kmeans 算法，老师还额外强调不要参考现成代码（所以prompt上我还额外加了“尽量别向我提供具体代码”），所以我想先搞懂这算法的具体流程，再尝试硬着头皮写出代码。</p>
+<p>现场学其实是很抽象的一件事情，并且我也把他想考察的重点弄错了，最后加之有点紧张，表现实在是差劲，实际到快 40 分钟的时候老师就结束了这个环节，进入自我介绍 + 简历面了。<br>后来回忆了一下，就算没学过，也能在短时间内大致弄懂这算法的步骤，复现出来的时间也够，只能说是自己的基础确实不够。<br>下面是一个 Kmeans 算法的 py 代码，由 ChatGPT 提供：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_sample_points</span>(<span class="params">num_samples, num_clusters, cluster_std=<span class="number">1.0</span></span>):</span><br><span class="line">    <span class="comment"># 生成簇中心点</span></span><br><span class="line">    cluster_centers = np.random.randn(num_clusters, <span class="number">2</span>)  <span class="comment"># 生成2维簇中心点，均值为0，标准差为1</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 生成样本点</span></span><br><span class="line">    samples = []</span><br><span class="line">    labels = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(num_samples):</span><br><span class="line">        <span class="comment"># 随机选择一个簇中心</span></span><br><span class="line">        cluster_index = np.random.choice(num_clusters)</span><br><span class="line">        <span class="comment"># 从簇中心生成样本点，假设每个簇服从正态分布</span></span><br><span class="line">        sample = cluster_centers[cluster_index] + np.random.randn(<span class="number">2</span>) * cluster_std</span><br><span class="line">        samples.append(sample)</span><br><span class="line">        labels.append(cluster_index)  <span class="comment"># 记录样本点所属的簇</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> np.array(samples), np.array(labels)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例用法</span></span><br><span class="line">num_samples = <span class="number">100</span>  <span class="comment"># 样本点数量</span></span><br><span class="line">num_clusters = <span class="number">3</span>   <span class="comment"># 簇的数量</span></span><br><span class="line">cluster_std = <span class="number">0.5</span>  <span class="comment"># 簇的标准差</span></span><br><span class="line">samples, labels = generate_sample_points(num_samples, num_clusters, cluster_std)</span><br></pre></td></tr></table></figure>
+
+<h3 id="简历面"><a href="#简历面" class="headerlink" title="简历面"></a>简历面</h3><p>第二项内容就是，对着我的复试简历提问，问了 20 多分钟，主要是老师本人提问，他组里的学生也有少量提问，不过学生的提问水平不咋地，可能我的简历上的东西涉及的方向太多太杂了，诸如数学建模赛题 &#x2F; 强化学习那些他们也不太了解，至于简历上系统编程方面的东西更不会问了，也启示我不要为了把简历写的很满而把不符合面试方向的东西放上去。</p>
+<p>首先是我的毕设，毕设做的是神经网络（或者说是 DL）在锂离子电池领域的应用，问答的硬伤有两个：</p>
+<ul>
+<li>我对这模型为什么能 work 不清楚。当他惊讶于我的样本量如此小但结果还不错的时候，我也发现了这个问题，我从头到尾都没有太深究</li>
+<li>我对毕设的细节（无论是代码还是模型细节）忘得一干二净，比如问到我的模型里 pytorch 用于反向传递的代码，我是完全忘了，并且那个 kaggle 赛题我是直接用的 sklearn，封装程度很高，我甚至没意识到这方面的疏漏，实际上准备的时候我应该用pytorch 重写一遍那个文本分类的回归模型，但总归是有遗漏<blockquote>
+<p>再再再回忆，答得真的不咋地</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>准备的内容一个没用上，无论是那个 Kaggle 的 nlp 赛题还是这老师的论文，也体现了我换位思考的不足:</p>
+<ul>
+<li>他可能真的不要求你是 DL 领域的大师，对 nlp 的成果和发展动态如数家珍，或者能对他的论文侃侃而谈（我确实为想要表现出这种从容淡定而准备了某些内容，但总之没什么用处）</li>
+<li>也可能不要求你在科研领域“开箱即用”，不需要他指导就能科研自动化（比较玄学，我不太能确定如何从一场面试里识别出这种能力，有论文是最有说服力的）</li>
+<li>他更想要一个真心想搞他这个方向研究的学生，但无论是我前面手写算法的表现和简历内容问答，都体现了我对 ML 和 DL 的基础不扎实，并且我的研究兴趣不一定真的在他的方向这边（很遗憾事实确实如此…我比较贪心，想要 AI 和 System 两手抓）</li>
+</ul>
+<p>其次，关于我的简历，只要是放上去的内容必须要仔细回顾，无论是整体设计还是细节，都要很熟练，与其准备一个新的项目还不如认真回顾自己之前做过的东西</p>
+<h2 id="以后"><a href="#以后" class="headerlink" title="以后"></a>以后</h2><p>没能进入这个做NLP的组是挺遗憾的，因为方向不错，并且这老师人也真不错（前两位老师甚至没回复我邮件呢…），没能抓住这次机会<br>明天是周末了，趁这周末好好找一下合适我方向的老师吧，再多发一些邮件，希望能有愿意要我的老师<br>等这次选完导师，尘埃落定之后，再启动其他的事情吧…</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">HoYiShui</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/04/19/summary-of-interview-for-admission-to-group/">http://example.com/2024/04/19/summary-of-interview-for-admission-to-group/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/nlp/">nlp</a><a class="post-meta__tags" href="/tags/Kmeans/">Kmeans</a><a class="post-meta__tags" href="/tags/Python/">Python</a><a class="post-meta__tags" href="/tags/ML/">ML</a><a class="post-meta__tags" href="/tags/Reinforement-Learning/">Reinforement Learning</a></div><div class="post_share"><div class="social-share" data-image="https://ooo.0x0.ooo/2024/04/19/Op5vUU.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/04/16/how-to-learn-vim-vimtutor/" title="Vimtutor is all you need"><img class="cover" src="https://ooo.0x0.ooo/2024/04/16/Om8J7S.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next</div><div class="next_info">Vimtutor is all you need</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/profile/bear.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">HoYiShui</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/HoYiShui"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">Welcome to my blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%94-0-%E8%BF%9B%E7%BB%84%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">研 0 进组面试总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E5%89%8D"><span class="toc-number">1.1.</span> <span class="toc-text">面试前</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">面试过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%86%99-Kmeans-%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.1.</span> <span class="toc-text">手写 Kmeans 算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8E%86%E9%9D%A2"><span class="toc-number">1.2.2.</span> <span class="toc-text">简历面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A5%E5%90%8E"><span class="toc-number">1.4.</span> <span class="toc-text">以后</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/04/19/summary-of-interview-for-admission-to-group/" title="研 0 第一场进组面试复盘总结（nlp 组）"><img src="https://ooo.0x0.ooo/2024/04/19/Op5vUU.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="研 0 第一场进组面试复盘总结（nlp 组）"/></a><div class="content"><a class="title" href="/2024/04/19/summary-of-interview-for-admission-to-group/" title="研 0 第一场进组面试复盘总结（nlp 组）">研 0 第一场进组面试复盘总结（nlp 组）</a><time datetime="2024-04-19T07:03:46.000Z" title="Created 2024-04-19 15:03:46">2024-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/16/how-to-learn-vim-vimtutor/" title="Vimtutor is all you need"><img src="https://ooo.0x0.ooo/2024/04/16/Om8J7S.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vimtutor is all you need"/></a><div class="content"><a class="title" href="/2024/04/16/how-to-learn-vim-vimtutor/" title="Vimtutor is all you need">Vimtutor is all you need</a><time datetime="2024-04-16T07:06:23.000Z" title="Created 2024-04-16 15:06:23">2024-04-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/15/hexo-blog-develop-notes/" title="Hexo Blog Develop Notes"><img src="https://ooo.0x0.ooo/2024/04/16/Om8pOa.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo Blog Develop Notes"/></a><div class="content"><a class="title" href="/2024/04/15/hexo-blog-develop-notes/" title="Hexo Blog Develop Notes">Hexo Blog Develop Notes</a><time datetime="2024-04-15T13:56:31.000Z" title="Created 2024-04-15 21:56:31">2024-04-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/04/15/hello-world/" title="Hello World"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2024/04/15/hello-world/" title="Hello World">Hello World</a><time datetime="2024-04-15T05:39:03.585Z" title="Created 2024-04-15 13:39:03">2024-04-15</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://ooo.0x0.ooo/2024/04/19/Op5vUU.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By HoYiShui</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
